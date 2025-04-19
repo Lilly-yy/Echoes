@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Echo – Login</title>
+  <link rel="stylesheet" href="./styles/output.css" />
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans min-h-screen flex flex-col items-center justify-center p-4">
+
+  <!-- Login Section -->
+  <section class="w-full max-w-md bg-white p-6 rounded-xl shadow-md mb-16">
+    <h1 class="text-2xl font-semibold mb-4 text-center">Login</h1>
+    <form action="/profile/index.html" method="post" class="flex flex-col space-y-4">
+      <label class="flex flex-col">
+        Email
+        <input type="email" name="email" required class="border border-gray-300 rounded px-3 py-2" />
+      </label>
+      <label class="flex flex-col">
+        Password
+        <input type="password" name="password" required minlength="8" class="border border-gray-300 rounded px-3 py-2" />
+      </label>
+      <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+        Log In
+      </button>
+    </form>
+
+    <div class="text-center mt-6">
+      <a href="#register" class="text-blue-600 hover:underline text-sm">Don't have an account? Register here</a>
+    </div>
+  </section>
+
+  <!-- Register Section -->
+  <section id="register" class="w-full max-w-md bg-white p-6 rounded-xl shadow-md mb-8 scroll-mt-16">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Register</h2>
+    <form action="/profile/index.html" method="post" class="flex flex-col space-y-4">
+      <label class="flex flex-col">
+        Name
+        <input type="text" name="name" required class="border border-gray-300 rounded px-3 py-2" />
+      </label>
+      <label class="flex flex-col">
+        Email
+        <input type="email" name="email" required class="border border-gray-300 rounded px-3 py-2" />
+      </label>
+      <label class="flex flex-col">
+        Password
+        <input type="password" name="password" required minlength="8" class="border border-gray-300 rounded px-3 py-2" />
+      </label>
+      <button type="submit" class="bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+        Register
+      </button>
+    </form>
+  </section>
+
+</body>
+</html>
