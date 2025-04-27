@@ -14,7 +14,7 @@ Built with Tailwind CSS, SASS, and vanilla JavaScript.
 - ✅ Login and register forms with validation
 - ✅ Choose and save your profile avatar
 - ✅ Responsive and mobile-friendly design
-- ✅ Pre-filled test user (`adventureseeker`) for easy login
+- ✅ Pre-filled test user (`adventureseeker`) for easy login ( username: adventure@echoes.com pw: naturelover )
 - ✅ LocalStorage support for avatar selection
 
 ## 🛠 Prerequisites
