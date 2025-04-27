@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="View your Echoes profile – your posts and activity."
+    />
+
     <title>Echoes – Profile</title>
     <link rel="stylesheet" href="../styles/output.css" />
     <link rel="icon" href="../resources/favicon.png" />
@@ -63,7 +68,7 @@
           alt="User avatar"
           class="w-24 h-24 rounded-full object-cover mb-4 border-2 border-[#3D7D75] cursor-pointer hover:opacity-80 transition"
         />
-        <h1 class="text-2xl font-semibold">@echo_user</h1>
+        <h1 class="text-2xl font-semibold">@adventureseeker</h1>
         <button
           class="mt-4 px-4 py-2 bg-[#3D7D75] text-white rounded hover:bg-[#33665f] transition"
         >
@@ -85,42 +90,65 @@
         </div>
       </section>
 
-      <!-- Posts -->
-      <section class="w-full max-w-3xl space-y-6 mb-8">
-        <h2 class="text-xl font-semibold text-center mb-4">Posts</h2>
-
-        <article class="bg-white p-6 rounded-xl shadow">
-          <h3 class="text-lg font-bold mb-2">Nature's Whisper</h3>
-          <p class="text-sm text-gray-600 mb-2">Posted by @echo_user</p>
-          <p>Sometimes silence speaks the loudest.</p>
-        </article>
-
-        <article class="bg-white p-6 rounded-xl shadow">
-          <h3 class="text-lg font-bold mb-2">Evening Light</h3>
-          <p class="text-sm text-gray-600 mb-2">Posted by @echo_user</p>
-          <p>Soft light filtering through the trees tonight 🍃</p>
-        </article>
-      </section>
-
-      <!-- Create New Post -->
+      <!-- Create New Echo -->
       <section class="w-full max-w-3xl mb-8 bg-white p-6 rounded-xl shadow">
-        <h2 class="text-xl font-semibold mb-4">Create a Post</h2>
+        <h2 class="text-xl font-semibold mb-4">Release an Echo</h2>
         <form action="#" method="post" class="flex flex-col gap-4">
-          <textarea
+            <textarea
             name="post"
-            placeholder="Share your thoughts..."
+            placeholder="What echo will you release today?"
             required
             class="w-full h-24 px-4 py-2 border border-gray-300 rounded resize-none"
           ></textarea>
+          
           <input type="file" name="image" class="text-sm" />
-          <button
-            type="submit"
-            class="self-end bg-[#3D7D75] text-white px-4 py-2 rounded hover:bg-[#33665f]"
-          >
-            Post
+          <button type="submit" class="self-end bg-[#3D7D75] text-white px-4 py-2 rounded hover:bg-[#33665f]">
+            Release
           </button>
+          
         </form>
       </section>
+
+      <!-- Posts -->
+      <section class="w-full max-w-3xl space-y-6 mb-8">
+        <h2 class="text-xl font-semibold text-center mb-4">Your echoes</h2>
+
+        <article class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-lg font-bold mb-2">Nature's Whisper</h3>
+          <p class="text-sm text-gray-600 mb-2">Posted by @adventureseeker</p>
+          <p>Sometimes silence speaks the loudest.</p>
+        </article>
+
+        <article class="bg-white p-4 rounded-xl shadow">
+          <h3 class="text-lg font-bold mb-2">Lakeview Reflections</h3>
+          <p class="text-sm text-gray-600 mb-2">Posted by @adventureseeker</p>
+          <img
+            src="../resources/posts/lakeview.jpeg"
+            alt="Lakeview with dog"
+            class="rounded-lg mb-4 mx-auto w-full max-w-md md:max-w-2xl max-h-96 md:max-h-[600px] object-cover"
+          />
+          <p>Golden hour moments with my best buddy 🐾</p>
+        </article>
+
+        <!-- On profile -->
+        <article class="bg-white p-4 rounded-xl shadow">
+          <h3 class="text-lg font-bold mb-2">Rainy Roads</h3>
+          <p class="text-sm text-gray-600 mb-2">Posted by @adventureseeker</p>
+          <img
+            src="../resources/posts/rain.JPEG"
+            alt="Rainy road in forest"
+            class="rounded-lg mb-4 mx-auto w-full max-w-md md:max-w-2xl max-h-96 md:max-h-[500px] object-cover"
+          />
+          <p>Muddy boots and fresh air after the rain. 💧🌳</p>
+        </article>
+      </section>
+
+      <button
+        onclick="location.href='../../index.html'"
+        class="mt-2 px-4 py-2 text-[#3D7D75] border border-[#3D7D75] rounded hover:bg-[#3D7D75] hover:text-white transition text-sm"
+      >
+        Logout
+      </button>
     </main>
 
     <!-- Footer -->
@@ -142,5 +170,23 @@
         © 2025 Echoes. All rights reserved.
       </div>
     </footer>
+    <!-- Avatar Selection Modal -->
+    <div
+      id="avatarModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    >
+      <div class="bg-white p-6 rounded-xl shadow-lg relative max-w-md w-full">
+        <button
+          id="closeModal"
+          class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl"
+        >
+          &times;
+        </button>
+        <h2 class="text-xl font-semibold mb-4 text-center">
+          Choose Your Avatar
+        </h2>
+        <div id="avatarOptions" class="grid grid-cols-4 gap-4"></div>
+      </div>
+    </div>
   </body>
 </html>

@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View your Echoes feed – short thoughts, moments, and nature posts.">
+
     <title>Echoes – Feed</title>
     <link rel="stylesheet" href="../styles/output.css" />
     <link
@@ -14,8 +16,9 @@
 
   <body class="flex flex-col min-h-screen bg-gray-50 text-gray-800 font-sans">
     <!-- Header -->
-    <header class="flex items-center justify-between px-6 h-24 bg-[url('../resources/background.jpg')] bg-cover bg-center shadow-md relative z-10">
-
+    <header
+      class="flex items-center justify-between px-6 h-24 bg-[url('../resources/background.jpg')] bg-cover bg-center shadow-md relative z-10"
+    >
       <a href="/feed/index.html" class="flex items-center gap-2">
         <img
           src="../resources/Echoes-logo-nobg.png"
@@ -24,13 +27,13 @@
         />
       </a>
       <a href="/profile/index.html">
-        <img id="avatarIcon" 
-             src="../resources/avatars/noavatar.png" 
-             alt="Profile" 
-             class="w-10 h-10 md:w-14 md:h-14 rounded-full border-2 border-[#3D7D75] hover:opacity-80 transition" />
+        <img
+          id="avatarIcon"
+          src="../resources/avatars/noavatar.png"
+          alt="Profile"
+          class="w-10 h-10 md:w-14 md:h-14 rounded-full border-2 border-[#3D7D75] hover:opacity-80 transition"
+        />
       </a>
-      
-      
     </header>
 
     <!-- Top wave -->
@@ -50,7 +53,7 @@
 
     <main class="flex-grow p-4">
       <!-- Page Title -->
-      <h1 class="text-3xl font-bold text-center mb-8">Your Echoes</h1>
+      <h1 class="text-3xl font-bold text-center mb-8">Echoes of the world</h1>
 
       <!-- Search + Sort -->
       <section
@@ -73,36 +76,98 @@
       <section
         class="max-w-3xl mx-auto mb-8 bg-white p-6 rounded-xl shadow space-y-4"
       >
-        <h2 class="text-xl font-semibold">Create a Post</h2>
+        <h2 class="text-xl font-semibold">Release an echo</h2>
         <form action="#" method="post" class="flex flex-col gap-4">
-          <textarea
+            <textarea
             name="post"
-            placeholder="What's on your mind?"
+            placeholder="What echo will you release today?"
             required
             class="w-full h-24 px-4 py-2 border border-gray-300 rounded resize-none"
           ></textarea>
+          
           <input type="file" name="image" class="text-sm" />
-          <button
-            type="submit"
-            class="self-end bg-forest hover:bg-forest-dark text-white px-4 py-2 rounded"
-          >
-            Post
+          <button type="submit" class="self-end bg-[#3D7D75] text-white px-4 py-2 rounded hover:bg-[#33665f]">
+            Release
           </button>
+          
         </form>
       </section>
 
       <!-- Posts List -->
       <section class="max-w-3xl mx-auto space-y-6">
-        <article class="bg-white p-6 rounded-xl shadow">
-          <h3 class="text-lg font-bold mb-2">Title of a Post</h3>
-          <p class="text-sm text-gray-600 mb-2">Posted by @someone</p>
-          <p>This is a sample post. The real ones will be more interesting!</p>
+        <!-- Post 1 -->
+        <article class="bg-white p-4 rounded-xl shadow">
+          <h3 class="text-lg font-bold mb-2">Aurora Magic</h3>
+          <p class="text-sm text-gray-600 mb-2">Posted by @nightdreamer</p>
+          <img
+            src="../resources/posts/aurora.jpeg"
+            alt="Aurora Borealis"
+            class="rounded-lg mb-4 mx-auto w-full max-w-md md:max-w-2xl max-h-96 md:max-h-[500px] object-cover"
+          />
+          <p>The sky was alive tonight. 🌌 Absolutely breathtaking!</p>
         </article>
 
-        <article class="bg-white p-6 rounded-xl shadow">
-          <h3 class="text-lg font-bold mb-2">Another Post</h3>
-          <p class="text-sm text-gray-600 mb-2">Posted by @echo</p>
-          <p>A calm and simple post in a peaceful feed...</p>
+        <!-- Post 2 -->
+        <article class="bg-white p-4 rounded-xl shadow">
+          <h3 class="text-lg font-bold mb-2">Chill Forest Days</h3>
+          <p class="text-sm text-gray-600 mb-2">Posted by @forestlover</p>
+          <img
+            src="../resources/posts/forest.jpg"
+            alt="Forest Relaxing"
+            class="rounded-lg mb-4 mx-auto w-full max-w-md md:max-w-2xl max-h-96 md:max-h-[500px] object-cover"
+          />
+          <p>
+            Sometimes you just need to lay in the moss and listen to the
+            whispers of the trees.
+          </p>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="bg-white p-4 rounded-xl shadow">
+          <h3 class="text-lg font-bold mb-2">Lakeview Reflections</h3>
+          <p class="text-sm text-gray-600 mb-2">Posted by @adventureseeker</p>
+          <img
+            src="../resources/posts/lakeview.jpeg"
+            alt="Lakeview with dog"
+            class="rounded-lg mb-4 mx-auto w-full max-w-md md:max-w-2xl max-h-96 md:max-h-[700px] object-cover"
+          />
+          <p>Golden hour moments with my best buddy 🐾</p>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="bg-white p-4 rounded-xl shadow">
+          <h3 class="text-lg font-bold mb-2">Rainy Roads</h3>
+          <p class="text-sm text-gray-600 mb-2">Posted by @echo_user</p>
+          <img
+            src="../resources/posts/rain.jpeg"
+            alt="Rainy road in forest"
+            class="rounded-lg mb-4 mx-auto w-full max-w-md md:max-w-2xl max-h-96 md:max-h-[500px] object-cover"
+          />
+          <p>Muddy boots and fresh air after the rain. 💧🌳</p>
+        </article>
+
+        <!-- Post 5 -->
+        <article class="bg-white p-4 rounded-xl shadow">
+          <h3 class="text-lg font-bold mb-2">Snowy Silence</h3>
+          <p class="text-sm text-gray-600 mb-2">Posted by @forestlover</p>
+          <img
+            src="../resources/posts/snow.jpeg"
+            alt="Snowy forest"
+            class="rounded-lg mb-4 mx-auto w-full max-w-md md:max-w-2xl max-h-96 md:max-h-[500px] object-cover"
+          />
+          <p>Everything is so still under a blanket of snow ❄️</p>
+        </article>
+
+        <!-- Post 6 -->
+        <article class="bg-white p-4 rounded-xl shadow">
+          <h3 class="text-lg font-bold mb-2">Winter Twilight</h3>
+          <p class="text-sm text-gray-600 mb-2">Posted by @nightdreamer</p>
+          <img
+            src="../resources/posts/winter.jpg"
+            alt="Winter sunset"
+            class="rounded-lg mb-4 mx-auto w-full max-w-md md:max-w-2xl max-h-96 md:max-h-[500px] object-cover"
+          />
+          <p>The last light before the stars take over. ✨</p>
         </article>
       </section>
     </main>
