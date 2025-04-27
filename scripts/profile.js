@@ -2,10 +2,16 @@ const avatarDisplay = document.getElementById('currentAvatar');
 const avatarModal = document.getElementById('avatarModal');
 const avatarOptions = document.getElementById('avatarOptions');
 const closeModal = document.getElementById('closeModal');
+const avatarIcon = document.getElementById('avatarIcon');
+
 
 // Load and set current avatar
 const selectedAvatar = localStorage.getItem('selectedAvatar') || 'noavatar.png';
 avatarDisplay.src = `../resources/avatars/${selectedAvatar}`;
+if (avatarIcon) {
+    avatarIcon.src = `../resources/avatars/${selectedAvatar}`;
+  }
+  
 
 // Open modal on click
 avatarDisplay.addEventListener('click', () => {

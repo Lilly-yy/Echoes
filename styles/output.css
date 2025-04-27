@@ -598,6 +598,14 @@ video {
   top: 100%;
 }
 
+.right-2 {
+  right: 0.5rem;
+}
+
+.top-2 {
+  top: 0.5rem;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -673,6 +681,10 @@ video {
   margin-top: 2rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -737,6 +749,26 @@ video {
   height: 0.5rem;
 }
 
+.max-h-80 {
+  max-height: 20rem;
+}
+
+.max-h-1 {
+  max-height: 0.25rem;
+}
+
+.max-h-96 {
+  max-height: 24rem;
+}
+
+.max-h-48 {
+  max-height: 12rem;
+}
+
+.max-h-8 {
+  max-height: 2rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -779,6 +811,10 @@ video {
 
 .max-w-md {
   max-width: 28rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
 }
 
 .flex-1 {
@@ -898,6 +934,10 @@ video {
 
 .rounded-xl {
   border-radius: 0.75rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .border {
@@ -1110,6 +1150,11 @@ video {
   color: rgb(61 125 117 / var(--tw-text-opacity, 1));
 }
 
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity, 1));
+}
+
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -1172,9 +1217,24 @@ body {
   background-color: rgb(51 102 95 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-\[\#3D7D75\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(61 125 117 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:text-gray-800:hover {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .hover\:underline:hover {
@@ -1218,6 +1278,42 @@ body {
     height: 2.5rem;
   }
 
+  .md\:max-h-\[500px\] {
+    max-height: 500px;
+  }
+
+  .md\:max-h-\[600px\] {
+    max-height: 600px;
+  }
+
+  .md\:max-h-\[800px\] {
+    max-height: 800px;
+  }
+
+  .md\:max-h-\[00px\] {
+    max-height: 00px;
+  }
+
+  .md\:max-h-\[550px\] {
+    max-height: 550px;
+  }
+
+  .md\:max-h-\[50px\] {
+    max-height: 50px;
+  }
+
+  .md\:max-h-\[55\\00px\] {
+    max-height: 55\00px;
+  }
+
+  .md\:max-h-\[55\\0\\0px\] {
+    max-height: 55\0\0px;
+  }
+
+  .md\:max-h-\[700px\] {
+    max-height: 700px;
+  }
+
   .md\:w-2\/3 {
     width: 66.666667%;
   }
@@ -1232,6 +1328,10 @@ body {
 
   .md\:w-14 {
     width: 3.5rem;
+  }
+
+  .md\:max-w-2xl {
+    max-width: 42rem;
   }
 
   .md\:flex-row {

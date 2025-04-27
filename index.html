@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Login or register to Echoes – your place for sharing short nature moments and reflections."
+    />
     <title>Echoes – Login</title>
     <link rel="stylesheet" href="./styles/output.css" />
     <link rel="icon" href="./resources/favicon.png" />
@@ -10,6 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap"
       rel="stylesheet"
     />
+    <script defer src="./scripts/index.js"></script>
+    <!-- Add this -->
   </head>
 
   <body
@@ -19,7 +25,7 @@
     <header
       class="flex items-center justify-between px-6 h-24 bg-[url('./resources/background.jpg')] bg-cover bg-center shadow-md relative z-10"
     >
-      <a href="/feed/index.html" class="flex items-center gap-2">
+      <a href="/index.html" class="flex items-center gap-2">
         <img
           src="../resources/Echoes-logo-nobg.png"
           alt="Echoes logo"
@@ -52,35 +58,37 @@
     </div>
 
     <main class="flex-grow p-4 flex flex-col items-center">
-      <!-- Login -->
-      <section
-        class="w-full max-w-md bg-white p-6 rounded-xl shadow-md mb-16 mt-8"
-      >
+      <!-- Login Section -->
+      <section class="w-full max-w-md bg-white p-6 rounded-xl shadow-md mb-16 mt-8">
         <h1 class="text-2xl font-semibold mb-4 text-center">Login</h1>
-        <form
-          action="/profile/index.html"
-          method="post"
-          class="flex flex-col space-y-4"
-        >
+        
+        <form id="loginForm" action="/profile/index.html" method="post" class="flex flex-col space-y-4">
           <label class="flex flex-col">
             Email
             <input
               type="email"
+              id="loginEmail"
               name="email"
               required
               class="border border-gray-300 rounded px-3 py-2"
             />
           </label>
+      
           <label class="flex flex-col">
             Password
             <input
               type="password"
+              id="loginPassword"
               name="password"
               required
               minlength="8"
               class="border border-gray-300 rounded px-3 py-2"
             />
           </label>
+      
+          <!-- This will be the error message -->
+          <p id="loginError" class="text-red-600 text-sm hidden"></p>
+      
           <button
             type="submit"
             class="bg-[#3D7D75] text-white py-2 rounded hover:bg-[#33665f] transition"
@@ -88,18 +96,19 @@
             Log In
           </button>
         </form>
-
+      
         <div class="text-center mt-6">
-          <a href="#register" class="text-[#3D7D75] hover:underline text-sm"
-            >Don't have an account? Register here</a
-          >
+          <a href="#register" id="showRegister" class="text-[#3D7D75] hover:underline text-sm">
+            Don't have an account? Register here
+          </a>
         </div>
       </section>
+      
 
-      <!-- Register -->
+      <!-- Register Section (hidden by default) -->
       <section
-        id="register"
-        class="w-full max-w-md bg-white p-6 rounded-xl shadow-md mb-8"
+        id="registerSection"
+        class="hidden w-full max-w-md bg-white p-6 rounded-xl shadow-md mb-8"
       >
         <h2 class="text-2xl font-semibold mb-4 text-center">Register</h2>
         <form
@@ -108,10 +117,10 @@
           class="flex flex-col space-y-4"
         >
           <label class="flex flex-col">
-            Name
+            Username
             <input
               type="text"
-              name="name"
+              name="username"
               required
               class="border border-gray-300 rounded px-3 py-2"
             />
@@ -142,6 +151,16 @@
             Register
           </button>
         </form>
+
+        <div class="text-center mt-6">
+          <a
+            href="#"
+            id="showLogin"
+            class="text-[#3D7D75] hover:underline text-sm"
+          >
+            Back to login
+          </a>
+        </div>
       </section>
     </main>
 
