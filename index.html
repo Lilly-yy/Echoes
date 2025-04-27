@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Echoes – Login</title>
+    <link rel="stylesheet" href="./styles/output.css" />
+    <link rel="icon" href="./resources/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="flex flex-col min-h-screen bg-[url('../resources/background.png')] bg-cover text-gray-800 font-sans"
+  >
+    <!-- Header -->
+    <header
+      class="flex items-center justify-between px-6 h-24 bg-[url('./resources/background.jpg')] bg-cover bg-center shadow-md relative z-10"
+    >
+      <a href="/feed/index.html" class="flex items-center gap-2">
+        <img
+          src="../resources/Echoes-logo-nobg.png"
+          alt="Echoes logo"
+          class="h-24 md:h-28 w-auto"
+        />
+      </a>
+      <a href="/profile/index.html">
+        <img
+          id="avatarIcon"
+          src="../resources/avatars/noavatar.png"
+          alt="Profile"
+          class="w-10 h-10 md:w-14 md:h-14 rounded-full border-2 border-[#3D7D75] hover:opacity-80 transition"
+        />
+      </a>
+    </header>
+
+    <!-- Top wave -->
+    <div class="w-full overflow-hidden -mt-1">
+      <svg
+        viewBox="0 0 1440 320"
+        class="w-full h-20"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="#3D7D75"
+          fill-opacity="1"
+          d="M0,224L48,202.7C96,181,192,139,288,117.3C384,96,480,96,576,117.3C672,139,768,181,864,192C960,203,1056,181,1152,181.3C1248,181,1344,203,1392,213.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
+    </div>
+
+    <main class="flex-grow p-4 flex flex-col items-center">
+      <!-- Login -->
+      <section
+        class="w-full max-w-md bg-white p-6 rounded-xl shadow-md mb-16 mt-8"
+      >
+        <h1 class="text-2xl font-semibold mb-4 text-center">Login</h1>
+        <form
+          action="/profile/index.html"
+          method="post"
+          class="flex flex-col space-y-4"
+        >
+          <label class="flex flex-col">
+            Email
+            <input
+              type="email"
+              name="email"
+              required
+              class="border border-gray-300 rounded px-3 py-2"
+            />
+          </label>
+          <label class="flex flex-col">
+            Password
+            <input
+              type="password"
+              name="password"
+              required
+              minlength="8"
+              class="border border-gray-300 rounded px-3 py-2"
+            />
+          </label>
+          <button
+            type="submit"
+            class="bg-[#3D7D75] text-white py-2 rounded hover:bg-[#33665f] transition"
+          >
+            Log In
+          </button>
+        </form>
+
+        <div class="text-center mt-6">
+          <a href="#register" class="text-[#3D7D75] hover:underline text-sm"
+            >Don't have an account? Register here</a
+          >
+        </div>
+      </section>
+
+      <!-- Register -->
+      <section
+        id="register"
+        class="w-full max-w-md bg-white p-6 rounded-xl shadow-md mb-8"
+      >
+        <h2 class="text-2xl font-semibold mb-4 text-center">Register</h2>
+        <form
+          action="/profile/index.html"
+          method="post"
+          class="flex flex-col space-y-4"
+        >
+          <label class="flex flex-col">
+            Name
+            <input
+              type="text"
+              name="name"
+              required
+              class="border border-gray-300 rounded px-3 py-2"
+            />
+          </label>
+          <label class="flex flex-col">
+            Email
+            <input
+              type="email"
+              name="email"
+              required
+              class="border border-gray-300 rounded px-3 py-2"
+            />
+          </label>
+          <label class="flex flex-col">
+            Password
+            <input
+              type="password"
+              name="password"
+              required
+              minlength="8"
+              class="border border-gray-300 rounded px-3 py-2"
+            />
+          </label>
+          <button
+            type="submit"
+            class="bg-[#3D7D75] text-white py-2 rounded hover:bg-[#33665f] transition"
+          >
+            Register
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto">
+      <div class="overflow-hidden w-full">
+        <svg
+          viewBox="0 0 1440 320"
+          class="w-full h-20 scale-y-[-1]"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#3D7D75"
+            fill-opacity="1"
+            d="M0,224L48,202.7C96,181,192,139,288,117.3C384,96,480,96,576,117.3C672,139,768,181,864,192C960,203,1056,181,1152,181.3C1248,181,1344,203,1392,213.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="bg-[#3D7D75] text-white text-center py-4 text-sm">
+        © 2025 Echoes. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
