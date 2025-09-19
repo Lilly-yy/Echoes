@@ -1,22 +1,27 @@
 module.exports = {
   content: [
-    "./index.html",
-    "./feed/**/*.html",
-    "./profile/**/*.html"
+    "./*.html",
+    "./feed/*.html",
+    "./profile/*.html",
+    "./scripts/**/*.js",
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#568DA0',        // calm blue-green
-        accent: '#BAE2DF',         // light mint
-        textDark: '#264653',       // deep earthy
-        textLight: '#F0F4F3'       // soft background
+        primary: '#568DA0',
+        accent:  '#BAE2DF',
+        textDark:'#264653',
+        textLight:'#F0F4F3',
+        brand:     '#3D7D75',
+        brandDark: '#33665f',
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-        heading: ['Montserrat', 'sans-serif']
-      }
-    }
+        heading: ['Montserrat', 'sans-serif'],
+      },
+    },
   },
-  plugins: [],
-}
+  plugins: [
+    
+  ],
+};

@@ -134,3 +134,14 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# --- Project-specific (Echoes) ---
+# Tailwind/PostCSS artefakter
+styles/output.css.map
+styles/temp.css
+styles/temp.css.map
+
+# Små ryddegreier
+.DS_Store
+Thumbs.db
+desktop.ini

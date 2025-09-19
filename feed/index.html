@@ -3,19 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="View your Echoes feed – short thoughts, moments, and nature posts."
+    />
+
     <title>Echoes – Feed</title>
     <link rel="stylesheet" href="../styles/output.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap"
       rel="stylesheet"
     />
-    <script src="../scripts/feed.js" defer></script>
+    <!-- Auth/token -->
+    <script type="module">
+      import { getAuth } from "../scripts/apiClient.js";
+      import { createApiKey } from "../scripts/auth.js";
+    
+      const auth = getAuth();
+      if (!auth?.token) {
+        location.href = "/login.html";
+      } else if (!auth?.apiKey) {
+        try {
+          await createApiKey();
+        } catch (e) {
+          console.warn("No API key yet:", e.message);
+          const note = document.createElement("div");
+          note.className = "mx-auto max-w-3xl my-4 p-3 rounded bg-yellow-100 text-yellow-800";
+          note.textContent = "Logged in, but no API key yet.";
+          document.body.prepend(note);
+        }
+      }
+    </script>
+    
+    <!-- Load feed  -->
+    <script type="module" src="../scripts/feed.js"></script>
+
   </head>
 
   <body class="flex flex-col min-h-screen bg-gray-50 text-gray-800 font-sans">
     <!-- Header -->
-    <header class="flex items-center justify-between px-6 h-24 bg-[url('../resources/background.jpg')] bg-cover bg-center shadow-md relative z-10">
-
+    <header
+      class="flex items-center justify-between px-6 h-24 bg-[url('../resources/background.png')] bg-cover bg-center shadow-md relative z-10"
+    >
       <a href="/feed/index.html" class="flex items-center gap-2">
         <img
           src="../resources/Echoes-logo-nobg.png"
@@ -24,13 +53,13 @@
         />
       </a>
       <a href="/profile/index.html">
-        <img id="avatarIcon" 
-             src="../resources/avatars/noavatar.png" 
-             alt="Profile" 
-             class="w-10 h-10 md:w-14 md:h-14 rounded-full border-2 border-[#3D7D75] hover:opacity-80 transition" />
+        <img
+          id="avatarIcon"
+          src="../resources/avatars/noavatar.png"
+          alt="Profile"
+          class="w-10 h-10 md:w-14 md:h-14 rounded-full border-2 border-[#3D7D75] hover:opacity-80 transition"
+        />
       </a>
-      
-      
     </header>
 
     <!-- Top wave -->
@@ -50,61 +79,83 @@
 
     <main class="flex-grow p-4">
       <!-- Page Title -->
-      <h1 class="text-3xl font-bold text-center mb-8">Your Echoes</h1>
+      <h1 class="text-3xl font-bold text-center mb-8">Echoes of the world</h1>
 
       <!-- Search + Sort -->
       <section
-        class="max-w-3xl mx-auto mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
-      >
-        <input
-          type="search"
-          placeholder="Search posts..."
-          class="w-full md:w-2/3 px-4 py-2 border border-gray-300 rounded"
-        />
-        <select
-          class="px-4 py-2 border border-gray-300 rounded w-full md:w-auto"
-        >
-          <option value="newest">Newest first</option>
-          <option value="oldest">Oldest first</option>
-        </select>
-      </section>
+      class="max-w-3xl mx-auto mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
+    >
+      <input
+        id="search"
+        type="search"
+        placeholder="Search posts..."
+        class="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded"
+      />
+    
+      <!-- Nytt: filter på tag -->
+      <input
+        id="tagFilter"
+        type="search"
+        placeholder="Filter by tag (optional)"
+        class="w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded"
+      />
+    
+      <!-- Gi select et id så vi kan lytte på change -->
+      <select id="sortOrder" class="px-4 py-2 border border-gray-300 rounded w-full md:w-auto">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+      </select>
+    </section>
+    
 
-      <!-- Create Post Form -->
-      <section
-        class="max-w-3xl mx-auto mb-8 bg-white p-6 rounded-xl shadow space-y-4"
-      >
-        <h2 class="text-xl font-semibold">Create a Post</h2>
-        <form action="#" method="post" class="flex flex-col gap-4">
-          <textarea
-            name="post"
-            placeholder="What's on your mind?"
-            required
-            class="w-full h-24 px-4 py-2 border border-gray-300 rounded resize-none"
-          ></textarea>
-          <input type="file" name="image" class="text-sm" />
-          <button
-            type="submit"
-            class="self-end bg-forest hover:bg-forest-dark text-white px-4 py-2 rounded"
-          >
-            Post
-          </button>
-        </form>
-      </section>
+<!-- Create Post Form -->
+<section class="max-w-3xl mx-auto mb-8 bg-white p-6 rounded-xl shadow space-y-4">
+  <h2 class="text-xl font-semibold">Release an echo</h2>
 
-      <!-- Posts List -->
-      <section class="max-w-3xl mx-auto space-y-6">
-        <article class="bg-white p-6 rounded-xl shadow">
-          <h3 class="text-lg font-bold mb-2">Title of a Post</h3>
-          <p class="text-sm text-gray-600 mb-2">Posted by @someone</p>
-          <p>This is a sample post. The real ones will be more interesting!</p>
-        </article>
+  <form id="createPostForm" class="flex flex-col gap-4">
+    <input
+      name="title"
+      type="text"
+      placeholder="Title"
+      required
+      class="w-full px-4 py-2 border border-gray-300 rounded"
+    />
 
-        <article class="bg-white p-6 rounded-xl shadow">
-          <h3 class="text-lg font-bold mb-2">Another Post</h3>
-          <p class="text-sm text-gray-600 mb-2">Posted by @echo</p>
-          <p>A calm and simple post in a peaceful feed...</p>
-        </article>
-      </section>
+    <textarea
+      name="body"
+      placeholder="What echo will you release today?"
+      required
+      class="w-full h-24 px-4 py-2 border border-gray-300 rounded resize-none"
+    ></textarea>
+
+    <input
+      name="imageUrl"
+      type="url"
+      placeholder="Image URL (optional, must be public)"
+      class="w-full px-4 py-2 border border-gray-300 rounded"
+    />
+
+    <input
+      name="tags"
+      type="text"
+      placeholder="Tags (comma separated, optional)"
+      class="w-full px-4 py-2 border border-gray-300 rounded"
+    />
+
+    <button
+      type="submit"
+      class="self-end bg-[#3D7D75] text-white px-4 py-2 rounded hover:bg-[#33665f]"
+    >
+      Release
+    </button>
+  </form>
+
+  <p id="createMsg" class="text-sm"></p>
+</section>
+
+
+      <!-- Posts List (dynamic, filled by feed.js) -->
+      <section id="posts" class="max-w-3xl mx-auto space-y-6"></section>
     </main>
 
     <footer class="mt-auto">
@@ -112,7 +163,7 @@
       <div class="overflow-hidden w-full">
         <svg
           viewBox="0 0 1440 320"
-          class="w-full h-20 scale-y-"
+          class="w-full h-20"
           preserveAspectRatio="none"
         >
           <path
