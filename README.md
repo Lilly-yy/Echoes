@@ -7,8 +7,6 @@ Built with **vanilla JavaScript** and **Tailwind CSS**, powered by the **Noroff 
 
 ## 📸 Screenshots
 
-> Add your own in `resources/screenshots/` and update these paths.
-
 - Feed: `./resources/screenshots/feed-page.png`
 - Profile: `./resources/screenshots/profile-page.png`
 
