@@ -6,7 +6,9 @@ Built with **vanilla JavaScript** and **Tailwind CSS**, powered by the **Noroff 
 ---
 
 ## 📸 Screenshots
+
 > Add your own in `resources/screenshots/` and update these paths.
+
 - Feed: `./resources/screenshots/feed-page.png`
 - Profile: `./resources/screenshots/profile-page.png`
 
@@ -26,12 +28,12 @@ Built with **vanilla JavaScript** and **Tailwind CSS**, powered by the **Noroff 
 - ✅ **Delete** a post (on single-post page)
 - ✅ Add/Delete **comments**
 
-
 - ⏳ (Optional for later) follow/unfollow, reactions, edit profile media via API
 
 ---
 
 ## 🧰 Tech Stack
+
 - HTML + Vanilla **JavaScript**
 - **Tailwind CSS** (via CLI)
 - **Noroff Social API v2** (JWT + API Key)
@@ -40,6 +42,7 @@ Built with **vanilla JavaScript** and **Tailwind CSS**, powered by the **Noroff 
 ---
 
 ## 🛠 Prerequisites
+
 - [Node.js](https://nodejs.org/) **v20+** (includes npm)
 
 ---
@@ -47,11 +50,13 @@ Built with **vanilla JavaScript** and **Tailwind CSS**, powered by the **Noroff 
 ## 🚀 Getting Started
 
 ### 1) Install dependencies
+
 ```bash
 npm install
 ```
 
 ### 2) Build or watch CSS
+
 ```bash
 # Development (watch Tailwind)
 npm run dev
@@ -61,13 +66,15 @@ npm run build
 ```
 
 ### 3) Run the app
+
 Open `index.html` in a local web server (e.g. VS Code “Live Server” extension) or serve the repo with any static server.
 
 ---
 
 ## 🔐 Using the API (quick flow)
+
 1. **Register** with a **@noroff.no** or **@stud.noroff.no** email (Register page).
-2. **Login** (Login page). Your JWT is saved in `localStorage`. 
+2. **Login** (Login page). Your JWT is saved in `localStorage`.
 3. Go to the **Feed** and start posting.
 
 > Tokens and API key are stored in `localStorage` under `auth`.  
@@ -76,19 +83,19 @@ Open `index.html` in a local web server (e.g. VS Code “Live Server” extensio
 ---
 
 ## 📜 Scripts
+
 ```json
 {
-  "dev":   "tailwindcss -i ./styles/main.css -o ./styles/output.css --watch",
+  "dev": "tailwindcss -i ./styles/main.css -o ./styles/output.css --watch",
   "build": "tailwindcss -i ./styles/main.css -o ./styles/output.css --minify",
   "watch": "npm run dev"
 }
 ```
 
-
 ---
 
+## 🧹 .gitignore
 
-## 🧹 .gitignore 
 - `node_modules/`
 - `styles/output.css.map`
 - any temp CSS like `styles/temp.css*`
@@ -97,5 +104,5 @@ Open `index.html` in a local web server (e.g. VS Code “Live Server” extensio
 ---
 
 ## 👤 Author
-Lilly-yy
 
+Lilly-yy
