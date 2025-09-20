@@ -8,7 +8,7 @@ Built with **vanilla JavaScript** and **Tailwind CSS**, powered by the **Noroff 
 ## 📸 Screenshots
 
 ![Echoes Screenshot 1](./resources/screenshots/feed-page.png) 
-- Profile: `./resources/screenshots/profile-page.png`
+![Echoes Screenshot 1](./resources/screenshots/profile-page.png) 
 
 ---
 
