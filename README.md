@@ -47,13 +47,19 @@ Built with **vanilla JavaScript** and **Tailwind CSS**, powered by the **Noroff 
 
 ## 🚀 Getting Started
 
-### 1) Install dependencies
+### 1) Clone the repository:
+
+   ```bash
+   git clone -b css-frameworks https://github.com/Lilly-yy/Echoes.git
+   ```
+
+### 2) Install dependencies
 
 ```bash
 npm install
 ```
 
-### 2) Build or watch CSS
+### 3) Build or watch CSS
 
 ```bash
 # Development (watch Tailwind)
@@ -63,7 +69,7 @@ npm run dev
 npm run build
 ```
 
-### 3) Run the app
+### 4) Run the app
 
 Open `index.html` in a local web server (e.g. VS Code “Live Server” extension) or serve the repo with any static server.
 
@@ -100,6 +106,9 @@ Open `index.html` in a local web server (e.g. VS Code “Live Server” extensio
 - OS junk: `.DS_Store`, `Thumbs.db`
 
 ---
+## 📜 Project
+
+https://github.com/users/Lilly-yy/projects/1
 
 ## 👤 Author
 
